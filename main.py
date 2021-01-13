@@ -6,11 +6,17 @@ def select_word():
 
 def game_board(word):
 	word_line = ""
-	for each in word:
-		if each == " ":
+	for letter in word:
+		if letter == " ":
 			word_line += ' '
 		else:
 			word_line += '-'
 	return word_line
 
-print(game_board("test ord"))
+def check_letter(letter_guess, word):
+	return if letter_guess in word
+
+
+
+# Testing
+print(game_board(str(select_word())))
