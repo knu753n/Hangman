@@ -7,7 +7,7 @@ def clear_screen():
 		os.system("clear")
 
 def select_word():
-	random_word = word_list.list_of_words[random.randint(1,len(word_list.list_of_words))]
+	random_word = random.choice(word_list.list_of_words)
 	return random_word
 
 def game_board(word):
@@ -107,4 +107,10 @@ def main():
 # main profram
 
 if __name__ == "__main__":
-	main()
+	try:
+		main()
+	except KeyboardInterrupt:
+		clear_screen()
+		input("Thanks for playing!")
+		clear_screen()
+		exit()
