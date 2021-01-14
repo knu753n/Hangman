@@ -51,6 +51,11 @@ def show_guessed_letter(indexes, guessed_letter, game_board):
 
 	return game_board
 
+def one_letter():
+	letter_input = input("Guess letter: ")
+	return letter_input[0]
+
+
 def main():
 	clear_screen()
 	random_word = select_word()
@@ -60,7 +65,7 @@ def main():
 	#print(random_word)
 	print(*game_board_)
 	while guesses_left > 0:
-		letter_guess = input("Guess letter: ")
+		letter_guess = str(one_letter())
 		letters_guessed.append(letter_guess)
 		indexes = guess_letter(letter_guess, random_word)
 		game_board_new = show_guessed_letter(indexes,letter_guess, game_board_)
@@ -90,6 +95,8 @@ def main():
 					main()
 				else:
 					clear_screen()
+					input("Thanks for playing!")
+					clear_screen()
 					exit()
 
 	input("GAME OVER!")
@@ -97,6 +104,8 @@ def main():
 	if replay.lower()=="yes":
 		main()
 	else:
+		clear_screen()
+		input("Thanks for playing!")
 		clear_screen()
 		exit()
 
