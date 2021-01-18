@@ -73,6 +73,8 @@ def main():
 		if game_board_new != False:
 			game_board_ = game_board_new
 			clear_screen()
+			clear_screen()
+			clear_screen()
 			print(*game_board_)
 			print('')
 			print('Guesses left:', guesses_left,end="")
@@ -81,6 +83,8 @@ def main():
 
 		else:
 			guesses_left -= 1
+			clear_screen()
+			clear_screen()
 			clear_screen()
 			print(*game_board_)
 			print('')
@@ -96,6 +100,8 @@ def main():
 				if replay.lower()=="yes":
 					main()
 				else:
+					clear_screen()
+					clear_screen()
 					clear_screen()
 					input("Thanks for playing!")
 					clear_screen()
