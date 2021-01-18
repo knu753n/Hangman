@@ -1,4 +1,4 @@
-import random, time, word_list, os
+import random, time, word_list, os, hangman_graphics
 
 def clear_screen():
 	if os.name == "nt":
@@ -77,6 +77,7 @@ def main():
 			print('')
 			print('Guesses left:', guesses_left,end="")
 			print(" | Already guessed: ",letters_guessed)
+			print(hangman_graphics.graphics_display(guesses_left))
 
 		else:
 			guesses_left -= 1
@@ -85,6 +86,7 @@ def main():
 			print('')
 			print('Guesses left:', guesses_left, end="")
 			print(" | Already guessed: ",letters_guessed)
+			print(hangman_graphics.graphics_display(guesses_left))
 		for each in game_board_:
 			if each != '-':
 				letters_left -= 1
